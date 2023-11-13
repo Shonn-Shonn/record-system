@@ -20,17 +20,16 @@ function App() {
   const [totalmark, setTotalMark] = useState(0);
 
   const isEightTeen = () =>  {
-     const newEightTeenRecords = studentRecords.filter((student) => student.age >= 18);
-     setEightTeenRecords([...newEightTeenRecords]);
+     const newEightTeenRecords = eightTeenRecords.filter((student) => student.age >= 18);
+     setEightTeenRecords(newEightTeenRecords);
   }
 
   const addToStudentRecord = () => {
      setName("");
      setAge(0);
      setTotalMark(0);
-     setEightTeenRecords([...eightTeenRecords,{name:name,age:age,totalMark:totalmark}]);
+     setEightTeenRecords([...eightTeenRecords,{name:name,age:parseInt(age),totalMark:parseInt(totalmark)}]);
   }
-
 
   return (
     <>
